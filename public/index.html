@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image To Skin by tgb</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/progress.min.js"
+        integrity="sha256-B676J/Jywi6IJ9e/E62nmk7Gn9KDkRQc7RfcIBKPQcI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/progress.min.css"
+        integrity="sha256-dkrthuAV9Awq6a3FATGJx0SCoj+K/3Umzv2dq0jNNrA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">Image To Skin</h2>
+        <p>Image to Skin is a simple tool for Minecraft that allows you to turn any image into a Minecraft skin.</p>
+        <p>Upload your image using the file picker and then click Build Skin to generate a preview and the skin file.
+        </p>
+        <p>Built by tgb</p>
+    </div>
+    <div id="upload-container" class="ui raised very padded text container segment">
+        <div id="error-message-container" class="ui negative message">
+            <div id="error-title" class="header">
+                No Image
+            </div>
+            <p id="error-subtitle">
+                Please upload an image for building your skin
+            </p>
+        </div>
+        <h2 class="ui header">Image Upload</h2>
+        <input type="file" id="file" />
+        <br>
+        <br>
+        <p>Select a color for the rest of the skin:
+        <div class="pickr-container"></div>
+        </p>
+        <br>
+        <div>
+            <button id="build-button" class="ui primary button">
+                Build Skin
+            </button>
+        </div>
+    </div>
+    <div id="skin-container" class="ui raised very padded text container segment">
+        <div id="loading" class="ui active dimmer">
+            <div class="ui massive text loader">Building Skin</div>
+          </div>
+        <div class="ui placeholder segment">
+            <div class="ui two column very relaxed stackable grid">
+                <div class="center aligned column">
+                    <img id="skin-preview" class="pixelated ui medium bordered image" src="">
+                </div>
+                <div class="center aligned column">
+                    <img id="skin" class="pixelated ui medium bordered image image-previews" src="">
+                </div>
+            </div>
+            <div class="ui vertical divider">
+                <i class="file image icon"></i>
+            </div>
+        </div>
+        <div id="download-container" class="ui positive message">
+            <div class="header">
+                Right Click and Save As to download skin
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
