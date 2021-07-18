@@ -2,6 +2,7 @@ const { spawn } = require('child_process');
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const PORT = 80;
 
@@ -47,6 +48,12 @@ app.post('/uploadimage', async (req, res) => {
     } catch (err) {
         res.status(500).send(err);
     }
+});
+
+app.get('/skincount', (req, res) => {
+    fs.readdir('./uploads', (err, files) => {
+        res.json({ skins: files.length });
+    });
 });
 
 app.listen(PORT, () =>
