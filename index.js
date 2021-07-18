@@ -51,9 +51,7 @@ app.post('/uploadimage', async (req, res) => {
 });
 
 app.get('/skincount', (req, res) => {
-    countFiles('./uploads', function (err, results) {
-        res.json({ skins: results.files });
-    });
+    res.json({ skins: 0 });
 });
 
 app.listen(PORT, () =>
