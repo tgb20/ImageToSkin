@@ -51,7 +51,7 @@ app.post('/uploadimage', async (req, res) => {
 });
 
 app.get('/skincount', (req, res) => {
-    fs.readdir('./uploads', (err, files) => {
+    fs.readdirSync('./uploads', (err, files) => {
         res.json({ skins: files.length });
     });
 });
