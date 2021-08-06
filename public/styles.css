@@ -4,3 +4,10 @@
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
+
+.ad-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
