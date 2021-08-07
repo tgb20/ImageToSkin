@@ -50,9 +50,10 @@ app.post('/uploadimage', async (req, res) => {
     }
 });
 
-app.get('/skincount', async (req, res) => {
+app.get('/metrics', (req, res) => {
     countFiles('./uploads', function (err, results) {
-        res.send({ skins: results.files });
+        res.set('Content-Type', 'text/plain');
+        res.send(`# HELP skin_downloads The total number skins created.\n# TYPE skin_downloads counter\nskin_downloads ${results.files}`);
     });
 });
 
