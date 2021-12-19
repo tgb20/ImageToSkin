@@ -278,6 +278,11 @@ app.post('/uploadimage', async (req, res) => {
     }
 });
 
+app.get('/metrics', (req, res) => {
+    res.set('Content-Type', 'text/plain');
+    res.send(`# HELP skin_downloads The total number skins created.\n# TYPE skin_downloads counter\nskin_downloads ${rdb.get('skins')}`);
+});
+
 app.listen(PORT, () =>
     console.log(`App is listening on port ${PORT}.`)
 );
