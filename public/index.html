@@ -24,10 +24,13 @@
             <div class="ui two column very relaxed stackable grid">
                 <div class="center aligned column">
                     <h2 class="ui header">Image To Skin</h2>
-                    <p>Image to Skin is a simple tool for Minecraft that allows you to turn any image into a Minecraft skin.</p>
-                    <p>Upload your image using the file picker and then click Build Skin to generate a preview and the skin file.
+                    <a href="https://github.com/tgb20/ImageToSkin">Source Code</a>
+                    <p>Image to Skin is a simple tool for Minecraft that allows you to turn any image into a Minecraft
+                        skin.</p>
+                    <p>Upload your image using the file picker and then click Build Skin to generate a preview and the
+                        skin file.
                     </p>
-                    <p>Built by tgb</p>
+                    <a href="https://onlinemo.de">More by tgb</a>
                 </div>
                 <div class="center aligned column">
                     <div id="image-to-skin" data-ea-publisher="onlinemode" data-ea-type="image"></div>
@@ -60,32 +63,24 @@
             </button>
         </div>
     </div>
-    <div id="skin-container" class="ui raised very padded text container segment">
+    <div id="skin-container" class="ui center aligned raised very padded text container segment">
         <div id="loading" class="ui active dimmer">
             <div class="ui massive text loader">Building Skin</div>
-          </div>
-        <div class="ui placeholder segment">
-            <div class="ui two column very relaxed stackable grid">
-                <div class="center aligned column">
-                    <img id="skin-preview" class="pixelated ui medium bordered image" src="">
-                </div>
-                <div class="center aligned column">
-                    <img id="skin" class="pixelated ui medium bordered image image-previews" src="">
-                </div>
-            </div>
-            <div class="ui vertical divider">
-                <i class="file image icon"></i>
-            </div>
         </div>
-        <div id="download-container" class="ui positive message">
-            <div class="header">
-                Right Click and Save As to download skin
-            </div>
+        <div class="center aligned column">
+            <canvas id="skin_container"></canvas>
+        </div>
+        <div class="ui labeled button" tabindex="0">
+            <a id="download-button" download="skin.png" class="ui green button">
+                <i class="download icon"></i> Download
+            </a>
+            <a id="skin-count" class="ui basic green left pointing label">
+                0
+            </a>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="skinview3d.bundle.js"></script>
     <script src="index.js"></script>
 </body>
-
-</html>
