@@ -39,7 +39,6 @@ $(() => {
         if (baseImage === undefined) {
             $('#error-message-container').show();
         } else {
-            backgroundColor = backgroundColor.substring(1);
 
             const formData = new FormData();
             formData.append('image', baseImage);
@@ -54,11 +53,20 @@ $(() => {
                     if (data.status != false) {
                         $('#upload-container').hide();
                         $('#skin-container').show();
-                        setTimeout(() => {
-                            $('#skin-preview').attr('src', data.skin.preview);
-                            $('#skin').attr('src', data.skin.full);
-                            $('#loading').hide();
-                        }, 1000);
+                        let skinViewer = new skinview3d.SkinViewer({
+                            canvas: document.getElementById("skin_container"),
+                            width: 300,
+                            height: 400,
+                            skin: data.skin.full,
+                            model: 'default'
+                        });
+                        let control = skinview3d.createOrbitControls(skinViewer);
+                        control.enableRotate = true;
+                        control.enableZoom = false;
+                        control.enablePan = false;
+                        $('.download-button').attr('href', data.skin.full);
+                        $('#skin-count').text(`Skin #${data.skins.toLocaleString("en-US")}`);
+                        $('#loading').hide();
                     }
                 })
                 .catch(error => {
