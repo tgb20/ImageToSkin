@@ -64,7 +64,7 @@ $(() => {
                         control.enableRotate = true;
                         control.enableZoom = false;
                         control.enablePan = false;
-                        $('.download-button').attr('href', data.skin.full);
+                        $('#download-button').attr('href', data.skin.full);
                         $('#skin-count').text(`Skin #${data.skins.toLocaleString("en-US")}`);
                         $('#loading').hide();
                     }
