@@ -280,7 +280,7 @@ app.post('/uploadimage', async (req, res) => {
 
 app.get('/metrics', (req, res) => {
     res.set('Content-Type', 'text/plain');
-    res.send(`# HELP skin_downloads The total number skins created.\n# TYPE skin_downloads counter\nskin_downloads ${rdb.get('skins')}`);
+    res.send(`# HELP skin_downloads The total number skins created.\n# TYPE skin_downloads counter\nskin_downloads ${db.get('skins')}`);
 });
 
 app.listen(PORT, () =>
