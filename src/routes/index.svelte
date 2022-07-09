@@ -13,6 +13,16 @@
     </div>
   </div>
 </div>
+
+<div class="max-w-4xl md:mx-auto bg-zinc-700 text-white font-rubik text-center m-5 flex flex-col items-center rounded-lg">
+  <div class="border-dashed border-2 border-white-100 w-11/12 h-64 flex flex-col justify-center items-center m-5 rounded-lg">
+    <p>Click to select an image, or drag and drop it here</p>
+    <p class="text-gray-500">.png, .jpg</p>
+  </div>
+</div>
+
+
+
 <div class="absolute right-0 bottom-0 p-2 text-right font-rubik text-white">
   <p>Source on <a class="underline" href="https://github.com/tgb20/ImageToSkin">GitHub</a></p>
   <p>Copyright © {year} tgb</p>
