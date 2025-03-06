@@ -5,7 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const sharp = require('sharp');
 const JSONdb = require('simple-json-db');
-const PORT = 1739;
+const PORT = 3000;
 
 const db = new JSONdb('storage.json');
 
